@@ -1,0 +1,21 @@
+ .jumbotron{
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+  background-color: #e9ecef;
+  border-radius: 0.3rem;
+}
+
+NavLink{
+  color: white;
+}
+
+
+.HeaderAnchor{
+  /* padding : rem; */
+  color: white;
+  margin: 0.5em;
+}
+
+.HeaderAnchor:focus{
+  color: orange;
+}
