@@ -1,5 +1,5 @@
 import React from "react";
-import TextInput from "./TextInput";
+import TextInput from "./common/TextInput";
 import PropTypes from "prop-types";
 
 function CourseForm(props) {
@@ -8,8 +8,8 @@ function CourseForm(props) {
       <TextInput
         id="title"
         label="Title"
-        onChange={props.onChange}
         name="title"
+        onChange={props.onChange}
         value={props.course.title}
         error={props.errors.title}
       />
@@ -29,6 +29,7 @@ function CourseForm(props) {
             <option value="2">Scott Allen</option>
           </select>
         </div>
+
         {props.errors.authorId && (
           <div className="alert alert-danger">{props.errors.authorId}</div>
         )}

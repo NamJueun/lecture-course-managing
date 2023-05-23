@@ -24,7 +24,7 @@ const ManageCoursePage = (props) => {
   function handleChange({ target }) {
     setCourse({
       ...course,
-      [target.name]: target.values,
+      [target.name]: target.value,
     });
     // debugger;
   }

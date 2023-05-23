@@ -13,7 +13,6 @@ function TextInput(props) {
       <div className="field">
         <input
           id={props.id}
-          // type="title"
           type="text"
           name={props.name}
           className="form-control"
@@ -21,7 +20,7 @@ function TextInput(props) {
           value={props.value}
         />
       </div>
-      {props.error && <div className="alert alert-danger">{props.error} </div>}
+      {props.error && <div className="alert alert-danger">{props.error}</div>}
     </div>
   );
 }
