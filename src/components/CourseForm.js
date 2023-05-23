@@ -1,60 +1,58 @@
 import React from "react";
+import TextInput from "./TextInput";
+import PropTypes from "prop-types";
 
 function CourseForm(props) {
   return (
-    <>
-      <h1>Course Form</h1>
-      <form>
-        <div class="form-group">
-          <label for="Title">Title</label>
-          <input
-            id="Title"
-            type="title"
-            name="title"
-            className="form-control"
-            value={props.course.title}
-          />
-          <small id="titleHelp" class="form-text text-muted">
-            pick one course
-          </small>
-        </div>
-        <div class="form-group">
-          <label for="Author">Author</label>
+    <form onSubmit={props.onSubmit}>
+      <TextInput
+        id="title"
+        label="Title"
+        onChange={props.onChange}
+        name="title"
+        value={props.course.title}
+        error={props.errors.title}
+      />
+
+      <div className="form-group">
+        <label htmlFor="author">Author</label>
+        <div className="field">
           <select
-            class="form-select"
-            aria-label="Default select example"
+            id="author"
             name="authorId"
+            onChange={props.onChange}
+            value={props.course.authorId || ""}
             className="form-control"
-            value={props.course.authorId}
           >
-            <option selected>Open this select menu</option>
+            <option value="" />
             <option value="1">Cory House</option>
             <option value="2">Scott Allen</option>
           </select>
-          <small id="titleHelp" class="form-text text-muted">
-            choose one
-          </small>
         </div>
-        <div class="form-group">
-          <label for="Category">Category</label>
-          <input
-            type="category"
-            className="form-control"
-            id="category"
-            name="category"
-            value={props.course.category}
-          />
-          <small id="titleHelp" class="form-text text-muted">
-            You can choose one class
-          </small>
-        </div>
-        <a type="submit" className="btn btn-primary" href="/courses">
-          {" "}
-          Save
-        </a>
-      </form>
-    </>
+        {props.errors.authorId && (
+          <div className="alert alert-danger">{props.errors.authorId}</div>
+        )}
+      </div>
+
+      <TextInput
+        id="category"
+        label="Category"
+        name="category"
+        onChange={props.onChange}
+        value={props.course.category}
+        error={props.errors.category}
+      />
+
+      <input type="submit" value="Save" className="btn btn-primary" />
+    </form>
   );
 }
+
+CourseForm.propTypes = {
+  course: PropTypes.object.isRequired,
+  onSubmit: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired,
+  errors: PropTypes.object.isRequired,
+};
 
 export default CourseForm;
