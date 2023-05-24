@@ -44,7 +44,12 @@ function CourseForm(props) {
         error={props.errors.category}
       />
 
-      <input type="submit" value="Save" className="btn btn-primary" />
+      <input
+        type="submit"
+        value="Save"
+        className="btn btn-primary"
+        href="/courses"
+      />
     </form>
   );
 }

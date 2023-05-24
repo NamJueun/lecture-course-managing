@@ -1,7 +1,6 @@
 import React from "react";
 import HomePage from "./HomePage";
 import CoursesPage from "./CoursesPage";
-// import CourseForm from "./CourseForm";
 import AboutPage from "./AboutPage";
 import Header from "./common/Header";
 import { Route, Switch, Redirect } from "react-router-dom";

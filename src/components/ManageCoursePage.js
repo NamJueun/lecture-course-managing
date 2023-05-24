@@ -15,11 +15,12 @@ const ManageCoursePage = (props) => {
 
   useEffect(() => {
     const slug = props.match.params.slug; // from the path `/courses/:slug`
+    // console.log(props.match.params);
     if (slug) {
       courseApi.getCourseBySlug(slug).then((_course) => setCourse(_course));
     }
-  }, [props.match.params.slug]);
-
+  }, [props.match.params.slug]); // []해도 됨. 근데 이러면 종속성 설정이 안됨. useEffect()는 react가 다시 렌더링 될 때마다 다시 실행되므로 종속성 배열 선언하는 거 추천
+  console.log({ course });
   // event will be automatically passed by the browser
   function handleChange({ target }) {
     setCourse({
@@ -42,7 +43,7 @@ const ManageCoursePage = (props) => {
   }
 
   function handleSubmit(event) {
-    event.preventDefault();
+    event.preventDefault(); // This will prevent the page from posting back to ther
     if (!formIsValid()) return;
     courseApi.saveCourse(course).then(() => {
       props.history.push("/courses");

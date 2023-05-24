@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 function CourseList(props) {
-  // props는 CoursePage 에서 받아온 course
   return (
     <table className="table">
       <thead>
@@ -19,9 +18,17 @@ function CourseList(props) {
           return (
             <tr key={course.id}>
               <td>
-                <button className="btn btn-outline-danger mt-2">Delete</button>
+                <button
+                  className="btn btn-outline-danger"
+                  // onClick={() => {
+                  //   props.deleteCourse(course.id);
+                  // }}
+                >
+                  Delete
+                </button>
               </td>
               <td>
+                {/* {"/course/" + course.slug} */}
                 <Link to={"/course/" + course.slug}>{course.title}</Link>
               </td>
               <td>{course.authorId}</td>
@@ -35,6 +42,7 @@ function CourseList(props) {
 }
 
 CourseList.propTypes = {
+  deleteCourse: PropTypes.func.isRequired,
   courses: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
