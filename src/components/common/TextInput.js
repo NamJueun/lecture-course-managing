@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 function TextInput(props) {
   // error
   let wrapperclass = "form-group";
-  if (props.error > 0) {
+  if (props.error.length > 0) {
     wrapperclass += "has-error";
   }
   return (
@@ -14,9 +14,9 @@ function TextInput(props) {
         <input
           id={props.id}
           type="text"
+          onChange={props.onChange}
           name={props.name}
           className="form-control"
-          onChange={props.onChange}
           value={props.value}
         />
       </div>

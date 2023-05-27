@@ -3,13 +3,14 @@ import TextInput from "./common/TextInput";
 import PropTypes from "prop-types";
 
 function CourseForm(props) {
+  // console.log(props);
   return (
     <form onSubmit={props.onSubmit}>
       <TextInput
         id="title"
         label="Title"
-        name="title"
         onChange={props.onChange}
+        name="title"
         value={props.course.title}
         error={props.errors.title}
       />
@@ -44,12 +45,7 @@ function CourseForm(props) {
         error={props.errors.category}
       />
 
-      <input
-        type="submit"
-        value="Save"
-        className="btn btn-primary"
-        href="/courses"
-      />
+      <input type="submit" value="Save" className="btn btn-primary" />
     </form>
   );
 }
