@@ -20,7 +20,10 @@ function CourseList(props) {
               <td>
                 <button
                   className="btn btn-outline-danger"
-                  onClick={() => props.deleteCourse(course.id)}
+                  onClick={() => {
+                    debugger;
+                    props.deleteCourse(course.id);
+                  }}
                 >
                   Delete
                 </button>

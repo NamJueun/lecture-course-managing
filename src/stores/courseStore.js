@@ -37,6 +37,7 @@ const store = new CourseStore();
 Dispatcher.register((action) => {
   switch (action.actionType) {
     case actionTypes.DELETE_COURSES:
+      debugger;
       _courses = _courses.filter((course) => course.id !== action.id);
       store.emitChange();
       break;

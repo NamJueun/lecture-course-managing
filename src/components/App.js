@@ -3,6 +3,7 @@ import HomePage from "./HomePage";
 import CoursesPage from "./CoursesPage";
 import AboutPage from "./AboutPage";
 import Header from "./common/Header";
+import AuthorsPage from "./Authors/AuthorsPage";
 import { Route, Switch, Redirect } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -23,6 +24,7 @@ function App() {
         <Route path="/course/:slug" component={ManageCoursePage} />
         <Route path="/course" component={ManageCoursePage} />
         <Route path="/about" component={AboutPage} />
+        <Route path="/authors" component={AuthorsPage} />
         <Route component={NotFoundPage} />
         <Redirect from="/about-page" to="/about" />
       </Switch>

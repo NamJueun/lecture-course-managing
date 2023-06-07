@@ -2,8 +2,8 @@ import { handleResponse, handleError } from "./apiUtils";
 const baseUrl = process.env.REACT_APP_API_URL + "/authors/";
 
 export function getAuthors() {
-  console.log(baseUrl);
-  console.log(window.location.href);
+  // console.log(baseUrl);
+  // console.log(window.location.href);
   return fetch(baseUrl).then(handleResponse).catch(handleError);
 }
 
