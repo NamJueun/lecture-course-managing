@@ -7,9 +7,9 @@ function AuthorList() {
       <thead>
         <tr>
           <th>&nbsp;</th>
-          <th>Title</th>
-          <th>Author ID</th>
-          <th>Category</th>
+          <th>Name</th>
+          <th>Subject</th>
+          <th>Department</th>
         </tr>
       </thead>
       <tbody></tbody>
